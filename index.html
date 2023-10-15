@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./shou.css">
+    <title>轻化工校园生活服务网</title>
+<script>
+    function  getD1(){
+          // 获取当前系统时间
+        var date=new Date();
+         // 转换为字符串
+        var d1=date.toLocaleString();
+        // 输出到页面
+        document.getElementById("datetime").innerHTML =d1; 
+    }
+    setInterval("getD1();",1000);
+</script> 
+</head>
+
+<body  onload = getD1()>
+    <div class="top">
+    <span class="zi">
+       <img src="./images/top-date.png" alt="" class="time">
+     <div id="datetime">
+     </div>
+    </span>
+      <div class="top-r">
+          <ul>
+              <li>
+                <button><a href="deng.html">登录</a></button>
+                <button><a href="zhuce.html">注册</a></button>
+              </li>
+              <li>抖音</li>
+              <li>企业微信</li>
+              <li>微博</li>
+              <li>微服务</li>
+          </ul>
+      </div>
+    </div>
+
+<div class="min">
+        <div class="one">
+        <img src="./images/logo1.jpg" alt="">
+        </div>
+        <div class="sou">
+        <input type="search" name="" placeholder="请输入要的搜索商品">
+            <button type="button"></button>
+        </div>
+        <div class="tow">
+        <img src="./images/school-logo1.jpg" alt="" class="logo">
+        </div>
+</div>
+
+    <div class="daohang">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="news.html">趣闻热点</a></li>
+            <li><a href="class.html">精品课堂</a></li>
+            <li><a href="">校园市场</a></li>
+            <li><a href="">寝室生活</a></li>
+            <li><a href="">联系老师</a></li>
+        </ul>
+    </div>
+     
+    <div class="lun">
+
+    <div class="lun-l">
+            <ul>
+                <li><a href=""> ·寝室生活，文明用电</a></li>
+                <li><a href=""> ·规章制度，一言一行都得遵守</a></li>
+                <li><a href=""> ·远离这些，你可以变得更优秀</a></li>
+                <li><a href=""> ·心理问题，应该时刻关注</a></li>
+                <li><a href=""> ·新一季度的跳蚤市场来了~~</a></li>
+                <li><a href=""> ·走出去吧！，一起去旅行！</a></li>
+            </ul>
+    </div>
+
+    <div class="big_box">
+        <!------------ 轮播的图片 ------------->
+             <ul>
+                <li>
+                    <img src="./images/school-future.jpg" alt="">
+                </li>
+                 <li>
+                     <img src="./images/cute.jpg" alt="">
+                 </li>
+                 <li>
+                     <img src="./images/h.jpg" alt="">
+                 </li>
+                 <li>
+                     <img src="./images/huoshaoyvn.jpg" alt="">
+                 </li>
+             </ul>
+         <!--------------  左右按键  -------------->
+             <div class="left">&lt</div>
+             <div class="right">&gt</div>
+         <!--------------    圆圈    -------------->
+             <ol>
+             </ol>
+         </div>
+
+         <div class="lun-r">
+            <ul>
+                <li><a href=""> ·寝室生活，文明用电</a></li>
+                <li><a href=""> ·规章制度，一言一行都得遵守</a></li>
+                <li><a href=""> ·远离这些，你可以变得更优秀</a></li>
+                <li><a href=""> ·心理问题，应该时刻关注</a></li>
+                <li><a href=""> ·新一季度的跳蚤市场来了~~</a></li>
+                <li><a href=""> ·走出去吧！，一起去旅行！</a></li>
+            </ul>
+         </div>
+        </div>
+         
+   
+    <div class="tf">
+        <div class="luntan">
+            <img src="./images/tiaozao.webp" alt="">
+            <span>这一季度，跳蚤市场来了哟**</span>
+        </div>
+        <div class="wangzhan">
+            <img src="./images/sushe.webp" alt="">
+            <span>寝室文明靠大家！一起来建设吧！</span>
+        </div>
+    </div>
+    <div class="school">
+        <h2>走进校园</h2>
+        <hr>
+        <div>
+        <img src="./images/zjxy-pic1.jpg" alt="" class="one">
+       </div>
+       <div>
+        <img src="./images/zjxy-pic2.jpg" alt="">
+       </div>
+       <div>
+        <img src="./images/zjxy-pic3.jpg" alt="">
+       </div>
+       <div>
+        <img src="./images/zjxy-pic4.jpg" alt="">
+       </div>
+    </div>
+    <img src="./images/xzzj-pic.png" alt="" class="last">
+
+
+</body>
+<script>
+    var timer;
+var big_box = document.querySelector('.big_box');
+var ul = big_box.querySelector('ul');
+var ol = big_box.querySelector('ol');
+var lis_img = ul.querySelectorAll('li');
+var left = document.querySelector('.left');
+var right = document.querySelector('.right');
+var num = 0;  //记录要滑到第几张图片
+
+function animate(obj, target) {
+    var timer1 = setInterval(function () {
+        var current = obj.offsetLeft;
+        var step = 10;
+        step = current > target ? -step : step;
+        // 下面要包括等于的情况，不然的话会发生抖动
+        if (Math.abs(current - target) <= Math.abs(step)) {
+            clearInterval(timer1);
+            obj.style.left = target + 'px';
+        }
+        else {
+            obj.style.left = current + step + 'px';
+        }
+    }, 10)
+}
+
+//圆圈样式改变
+function circlechange(circles, circle) {
+    if (circle == lis_img.length) {
+        circle = 0;
+    }
+    //设置圆圈样式
+    //先把所有的小圆圈样式去掉
+    for (var i = 0; i < circles.length; i++) {
+        circles[i].className = "";
+    }
+    //把当前图片对应的圆圈设置样式
+    circles[circle].className = "current";
+}
+
+//在页面刚加载进来就执行代码
+window.addEventListener('load', function () {
+    //设置有几个圆圈
+    for (var i = 0; i < lis_img.length; i++) {
+        var li = document.createElement('li');
+        ol.appendChild(li);
+        // 给圆圈添加自定义属性
+        li.setAttribute('index', i);
+        //开始第一个小圆圈就是被选中状态
+        if (i == 0) {
+            li.className = "current";
+        }
+        //给圆圈添加点击处理事件
+        li.addEventListener('click', function () {
+            //圆圈样式改变
+            for (var j = 0; j < ol.children.length; j++) {
+                ol.children[j].className = "";
+            }
+            this.className = "current";
+            //实现鼠标点击圆圈后图片滑动
+            var index = this.getAttribute('index');
+            animate(ul, -index * big_box.offsetWidth);
+            // 在图片滑动的同时对应的圆圈样式也要发生改变
+            circlechange(circles, index);
+        })
+    }
+    //实现无缝衔接的切换图片，要把第一张图片克隆到最后一张图片
+    var circles = ol.querySelectorAll('li');
+    // cloneNode函数若括号里面是true，则是深拷贝，false则是浅拷贝
+    var li_img = ul.children[0].cloneNode(true);
+    ul.appendChild(li_img);
+
+    //鼠标点击右箭头向右滑动
+    right.addEventListener('click', function () {
+        //下面if代码是实现向右滑动的无缝衔接
+        if (num >= lis_img.length) {
+            num = 0;
+            //注意改变属性left的值后面一定要跟px，否则没有效果
+            ul.style.left = 0 + 'px';
+        }
+        num++;
+        animate(ul, -num * big_box.offsetWidth);
+        circlechange(circles, num);
+    })
+    //鼠标点击左箭头向左滑动
+    left.addEventListener('click', function () {
+        //实现向左滑动的无缝衔接
+        if (num <= 0) {
+            num = lis_img.length;
+            ul.style.left = -lis_img.length * big_box.offsetWidth + 'px';
+        }
+        num--;
+        animate(ul, -num * big_box.offsetWidth);
+        circlechange(circles, num);
+    })
+
+    //实现自动播放因为自动播放的功能和向右滑动的功能一样，所以直接调用向右滑动的函数
+    timer = setInterval(function () {
+        right.click();
+    }, 2000)
+
+    //鼠标放到盒子上图片停止自动播放
+    big_box.addEventListener('mouseover', function () {
+        clearInterval(timer);
+    })
+
+    //鼠标离开图片自动播放
+    big_box.addEventListener('mouseout', function () {
+        clearInterval(timer);
+        //创建一个定时器时最好先清除一下定时器
+        timer = setInterval(function () {
+            right.click();
+        }, 2000)
+    })
+})
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="click2.js"></script>
+    <link rel="stylesheet" href="./css.css">
+    <title>登录</title>
+</head>
+<body>
+    <div class="beijing">
+        <div class="wai">
+            <div class="one">
+                <p class="deng">登录</p>              
+    <form action="../首页/shouye.html" method="POST">
+        
+        <p>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="username" class="user"></td>
+            </tr>
+            <tr>
+                <td>密&nbsp;&nbsp;&nbsp;码：</td>
+                <td><input type="password" name="password" class="pw"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="登陆" onclick="login()" class="an d"></td>
+            </tr>
+        </p>
+        <div class="xiao">
+			<img src="./image/qiyeweixin.png" width="48px" height="48px">  <br/>
+		     <span class="weix">企业微信同意验证</span>
+            </div>
+            <a href="#">忘记密码</a>
+        </div>
+        <p class="ha">登录界面，此界面由Wukun设计  吴坤</p>
+    </form>
+</div>
+  </div>
+</body>
+<script>
+    var form = document.querySelector('form');
+    var username = document.querySelector('[name="username"]');
+    var password = document.querySelector('[name="password"]');
+    var btn1 = document.querySelector('[type="submit"]');
+    form.onsubmit = function(){
+        var reg = /^\w{4,12}$/;
+        if(!reg.test(username.value.trim())){
+            alert('请正确输入用户名');
+            return false;
+        }
+        var reg = /^\d{6,16}$/;
+        if(!reg.test(password.value.trim())){
+            alert('请正确输入密码');
+            return false;
+        }
+    }
+</script>
+</html>

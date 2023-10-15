@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    margin: 0 auto; 
+    background: url(./image/class-top.jpg) no-repeat top center;
+    z-index: -1;
+    position: absolute;
+}
+.xveyvan ul{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 260px;
+}
+.xveyvan img{
+    width: 80px;
+    height: 70px;
+}
+.xveyvan ul li{
+    list-style: none;
+    float: left;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    width: calc((100%-80px)/10);
+    background-color: rgb(246, 247, 250);
+    text-align: center;
+    border:  1px solid #c6c6c6;
+}
+.xveyvan li>a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #4c4c4c;
+    text-decoration: none;
+    margin: 2px;
+}
+.class1{
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+}
+.class1 .one{
+    width: calc((100%-80px)/3);
+    list-style: none;
+    float: left;
+    width: 100%;
+    height: 100%;
+   margin-right: 20px;
+   margin-top: 10px;
+}
+.class1 .one img{
+    width: 100%;
+}
+.class1 .one span{
+    color: #333;
+}
